@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>Oslo Tilbud Services</title>
+
+	<link rel="stylesheet" href="css/google-fonts.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/login.css"/>
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="./javascript/facebook.js"></script>
+	<script src="./node_modules/angular/angular.min.js"></script>
+	<script src='./node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+	<script src="./node_modules/prefixfree/prefixfree.min.js"></script>
+	<script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="./javascript/script.js"></script>
+
+	<script src="./javascript/directives/login-directive.js"></script>
+	<script src="./javascript/services/register-user-services.js"></script>
+	<script src="./javascript/services/product-data-services.js"></script>
+
+</head>
+
+<body ng-app="osloTilbudApp"  ng-class="{ 'backimage': model.loginScreen}">
+<div id="fb-root"></div>
+	<div ng-controller="MainController">
+		<div ng-show="model.loginScreen">
+			<login-screen></login-screen>
+		</div>
+		<div ng-show="!model.loginScreen">
+			<header class="compact">
+				<!--<h2 class="tzine"><a href="http://tutorialzine.com/2015/02/single-page-app-without-a-framework/">Back to article</a></h2>-->
+				<h1><a href="#">Oslo Tilbud Services</a></h1>
+			</header>
+
+			<div class="main-content">
+				<div class="all-products page">
+					<div class="filters">
+						<form>
+                            <div class="filter-criteria" ng-repeat="item in model.productItemsFromServer">
+                                <span>{{item.displayName}}</span>
+                                <label ng-repeat="data in item.data">
+                                    <input type="checkbox" name="{{item.name}}" value="{{data.value}}">{{data.displayName}}
+                                </label>
+                            </div>
+
+							<button>Clear filters</button>
+						</form>
+					</div>
+
+					<ul class="products-list">
+						<script id="products-template" type="x-handlebars-template">​
+						{{#each this}}
+						<li data-index="{{id}}">
+							<a href="#" class="product-photo"><img src="{{image.small}}" height="130" alt="{{name}}"/></a>
+							<h2><a href="#"> {{name}} </a></h2>
+							<ul class="product-description">
+								<li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
+								<li><span>Storage: </span>{{specs.storage}} GB</li>
+								<li><span>OS: </span>{{specs.os}}</li>
+								<li><span>Camera: </span>{{specs.camera}} Mpx</li>
+							</ul>
+							<button>Buy Now!</button>
+							<p class="product-price">{{price}}$</p>
+							<div class="highlight"></div>
+						</li>
+						{{/each}}
+						</script>
+					</ul>
+				</div>
+				<div class="single-product page">
+
+					<div class="overlay"></div>
+
+					<div class="preview-large">
+						<h3>Single product view</h3>
+						<img src=""/>
+						<p></p>
+
+						<span class="close">×</span>
+					</div>
+				</div>
+
+				<div class="error page">
+					<h3>Sorry, something went wrong :(</h3>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script src="./javascript/controllers/main-controller.js"></script>
+
+
+
+</body>
+</html>

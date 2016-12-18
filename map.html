@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/map.css">
+
+
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5_nPqACtB92z0emJeMLKESG4ZVuvWv5Y&callback=initMap" async defer/>-->
+</head>
+<body>
+    <div id="panel">
+        <input id="city_country" type="textbox" value="Oslo, Norway">
+        <input type="button" value="Find Address" onclick="codeAddress()">
+    </div>
+    <div id="mapCanvas"></div>
+    <div id="infoPanel">
+        <b>Marker status:</b>
+        <div id="markerStatus"><i>Click and drag the marker.</i></div>
+        <b>Current position:</b>
+        <div id="info"></div>
+        <b>Closest matching address:</b>
+        <div id="address"></div>
+    </div>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="javascript/map.js"></script>
+</body>
+</html>

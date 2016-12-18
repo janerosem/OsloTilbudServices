@@ -1,0 +1,27 @@
+body{
+    background:url('./images/background.jpg');
+    /*padding:20px;*/
+}
+
+#navbar {
+    background-color : #0070ba;
+}
+
+.navbar-brand{
+    color : whitesmoke !important;
+}
+#login {
+    color : whitesmoke !important;
+    padding-right :20px !important;
+}
+
+#categories {
+    color : whitesmoke !important;
+}
+
+/*#search-box {*/
+    /*width: 100% !important;*/
+/*}*/
+/*#search-div {*/
+    /*width: 80% !important;*/
+/*}*/
