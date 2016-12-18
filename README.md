@@ -2,9 +2,9 @@ start mongodb with the command
 
 1. https://www.mongodb.com/download-center?jmp=nav#community
    
-2. mongod --dbpath=database
+2. npm install
 
-3. npm install
+3. mongod --dbpath ./database&
 
 4. npm start
 

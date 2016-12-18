@@ -49,7 +49,7 @@ var productSchema = new Schema({
         type: String,
         required: true
     },
-    comments:[commentSchema],
+    comments:[commentSchema]
 }, {
     timestamps: true
 });
